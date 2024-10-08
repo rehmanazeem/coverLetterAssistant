@@ -1,36 +1,28 @@
-Would you like to join us in shaping the transformation of our energy system? Then you've come to the right place! We operate one of the largest Virtual Power Plants in Europe with thousands of networked power generators, consumers and storage facilities. With our team, we are working on the realisation of a sustainable power market – at our headquarter in the heart of Cologne-Ehrenfeld, in our European branches and, of course, also while working from home.
-Python Software Developer - Flexibility Applications (f/m/d)
-In the Software Engineering unit, we use agile methods to develop sustainable software solutions for the European energy transition. With a growing portfolio of batteries, solar, wind, and biogas power plants, taking advantage of these assets’ flexibility is necessary to respond to fluctuations in renewable energy production. You will develop applications with which our electricity traders can react to price signals and utilize our flexible assets in the most profitable way. In our open-minded and cooperative working environment, we offer you the opportunity to work on topics that are highly relevant to the energy transition, to contribute your programming expertise and to continuously develop yourself and the team.
-Flexible working time models are not just an empty phrase for us, but an everyday reality at our company. Whether full-time or part-time, we’re open to finding a solution that suits you.
+Job Title : Internship for Computer Vision and Automation at Innovation Think Tank
 
-We work with:
-Python 3
-asyncio, FastAPI, SQLAlchemy, pandas, Pyomo
-Azure, GitHub, Docker, MySQL, RabbitMQ, Redis, Terraform
-Jira, Confluence, Grafana
- 
+Your tasks and responsibilities:
 
-This is what you like:
-You bring a wide variety of data streams together to optimize the operation of several hundred flexible assets.
-You design and implement APIs and user interfaces that enable others within the company to access this flexibility.
-You explore opportunities to use flexibility in short-term trading on the European power exchanges.
-You translate the technical restrictions of flexible assets (like batteries and biogas plants) into concrete optimization models.
-You refine our concepts into high-quality, production-ready code that can scale up and optimize hundreds of assets.
-You work in a cross-functional team with agile concepts such as Scrum, code reviews, pair programming, and retrospectives.
-These are your qualifications and skills
-You have successfully completed a degree in a STEM field (sciences, technology, engineering, math) or an apprenticeship in software development, or have comparable knowledge that convinces us.
-You have several years of professional experience in software development, including experience working with Python.
-You can break down and structure complex domains clearly.
-You are creative, eager to learn and love discussing technical solutions with colleagues.
-You ideally have experience with linear optimization models and related algorithms.
-You are fluent in written and spoken English. Knowledge of German, or the willingness to learn on the job, is a plus. 
+You will support in research tasks for the field of sensing and adjacent fields for various healthcare applications
+You will develop or improve computer vision software with relevant knowledge in computer vision and machine learning
+You will develop or improve algorithms and applications for other types of sensor applications
+You are involved in creating new use cases for predevelopment-level product ideas
+To find out more about the specific business, have a look at https://www.siemens-healthineers.com/careers/innovation-think-tank
 
-What’s in it for you?:
-Hybrid and flexible working including home office equipment
-The opportunity to save up additional vacation days and use them flexibly with our Flextime working model
-Comprehensive further development opportunities such as language courses, coaching and training
-Free delivery of green electricity (electricity deputation)
-Job bike and Germany ticket
-Sports offers e.g (Urban Sports Club, Yoga courses)
-Regular events: summer party, Christmas party, LAN party, after-work pizza & drinks
-External support in finding daycare places as well as other private and professional challenges
+Your qualifications and experience:
+
+You are currently successfully studying in the field of mechatronics, software engineering, computer science / technologies or any other related field, at least in the 4th bachelor or 1st master semester
+You have broad knowledge in programming, sensor technologies and data analytics, in which you already gathered some work experience
+You have experience in MS Office programs (PowerPoint, Word, Excel and Outlook)
+Proficiency in C++ and Python
+You have experience with Computer Vision Packages: Familiarity with OpenCV, YOLO, MediaPipe, Numpy, etc. ensures practical experience with industry-standard tools
+You worked with Sensors and Data Processing: Proficiency in working with various sensors (e.g., 2D and 3D cameras, RADAR, LiDAR, IMUs) including their setup, calibration, data acquisition, and processing
+You are familiar with Software Development Tools and Practices: Proficiency in version control (Git), code review processes, and agile methodologies
+
+Your attributes and skills:
+
+You are fluent in English (written and spoken)
+You have strong communication and time management skills
+You possess a deep curiosity and willingness to dive into new subject areas
+Independence and a goal-oriented mindset are critical for managing tasks and achieving objectives
+You have excellent critical thinking skills, combined with the ability to present your beliefs clearly
+Does your study regulations include an internship and would you like to gain practical experience? Then we look forward to receiving your application!

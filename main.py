@@ -8,10 +8,19 @@ def createClient():
     )
     return client
 
-with open('./files/jobDescription.txt', 'r') as f:
-    jobDescription = f.read()
+def getFileContent(path : str, filename : str):
+    with open(os.path.join(path,filename), 'r') as f:
+        jobDescription = f.read()
+    return jobDescription
 
-summarizer_prompt = f"""
+
+BASE_DIR = './files'
+jobDescriptionFilename = 'jobDescription.txt'
+cvFilename = 'CV.txt'
+
+jobDescription = getFileContent(BASE_DIR, jobDescriptionFilename)
+
+summarizerPrompt = f"""
 ###
 From the following job description :
 {jobDescription}
@@ -32,7 +41,7 @@ Arrange the summary in the following way :
 """
 
 messages = [    
-    {"role": "system", "content": summarizer_prompt},
+    {"role": "system", "content": summarizerPrompt},
     {"role": "user", "content": "Summarize the job description based on the system prompt."}
 ]
 
@@ -44,7 +53,130 @@ response = client.chat.completions.create(
     )
 
 lineCount = 150
-wrapped_output = response.choices[0].message.content
+summarizedJobDescription = response.choices[0].message.content
+# print("="*lineCount)
+# print(summarizedJobDescription, sep="\n")
+# print("="*lineCount)
+
+cvContent = getFileContent(BASE_DIR, cvFilename)
+
+# coverLetterWritingPrompt = f"""
+# ###
+# Based on the following job description summary:
+# {summarizedJobDescription}
+
+# And the following CV:
+# {cvContent}
+
+# Write a professional cover letter tailored to the job description. The cover letter should highlight relevant experiences, skills, and qualifications from the CV that match the job requirements. It should be structured as follows:
+
+# 1. Introduction: Briefly introduce yourself and state the position you are applying for.
+# 2. Body Paragraph 1: Discuss your relevant experience and how it aligns with the key responsibilities of the job.
+# 3. Body Paragraph 2: Highlight your qualifications and skills that match the job requirements.
+# 4. Body Paragraph 3: Mention any additional information or unique qualities that make you a strong candidate.
+# 5. Conclusion: Express enthusiasm for the position and provide contact information for follow-up.
+# ###
+
+# ---
+# Arrange the cover letter in the following way:
+# 1. Introduction
+# 2. Body Paragraph 1
+# 3. Body Paragraph 2
+# 4. Body Paragraph 3
+# 5. Conclusion
+# ---
+# """
+
+# messages = [    
+#     {"role": "system", "content": coverLetterWritingPrompt},
+#     {"role": "user", "content": "Write a cover letter based on the system prompt."}
+# ]
+
+# response = client.chat.completions.create(
+#     model="llama3.2",
+#     temperature=0.7,
+#     messages=messages
+# )
+
+# coverLetter = response.choices[0].message.content
+# print("="*lineCount)
+# print(coverLetter, sep="\n")
+# print("="*lineCount)
+
+
+matchingSkillsPrompt = f"""
+###
+From the following job description summary:
+{summarizedJobDescription}
+
+And the following CV:
+{cvContent}
+
+Identify and list the matching skills, keywords, and relevant information between the job description and the CV. The list should be structured as follows:
+
+1. Matching Skills: <List of matching skills>
+2. Matching Keywords: <List of matching keywords>
+3. Relevant Information: <List of relevant information>
+###
+
+Latly mention the job title and company name from the job description summary.
+"""
+
+messages = [    
+    {"role": "system", "content": matchingSkillsPrompt},
+    {"role": "user", "content": "Identify and list the matching skills, keywords, and relevant information based on the system prompt."}
+]
+
+response = client.chat.completions.create(
+    model="llama3.2",
+    temperature=0.7,
+    messages=messages
+)
+
+matchedOutput = response.choices[0].message.content
 print("="*lineCount)
-print(wrapped_output, sep="\n")
+print(matchedOutput, sep="\n")
 print("="*lineCount)
+
+coverLetterWritingPrompt = f"""
+###
+Based on the following matched output:
+{matchedOutput}
+
+Write a professional cover letter tailored to the job description. The cover letter should highlight relevant experiences, skills, and qualifications that match the job requirements. It should be structured as follows:
+
+1. Introduction: Briefly introduce yourself and state the position you are applying for.
+2. Body Paragraph 1: Discuss your relevant experience and how it aligns with the key responsibilities of the job. Here avoid repeating the information from the CV.
+3. Body Paragraph 2: Highlight your qualifications and skills that match the job requirements primarily focusing on the matched skills and keywords.
+4. Body Paragraph 3: Mention any additional information or unique qualities that make you a strong candidate, focusing on the relevant information.
+5. Conclusion: Express enthusiasm for the position and provide contact information for follow-up.
+
+Keep the cover letter concise and professional.
+###
+
+---
+Arrange the cover letter in the following way:
+1. Introduction
+2. Body Paragraph 1
+3. Body Paragraph 2
+4. Body Paragraph 3
+5. Conclusion
+---
+"""
+
+messages = [    
+    {"role": "system", "content": coverLetterWritingPrompt},
+    {"role": "user", "content": "Write a cover letter based on the system prompt."}
+]
+
+response = client.chat.completions.create(
+    model="llama3.2",
+    temperature=0.7,
+    messages=messages
+)
+
+coverLetter = response.choices[0].message.content
+print("="*lineCount)
+print(coverLetter, sep="\n")
+print("="*lineCount)
+
